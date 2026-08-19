@@ -1,12 +1,10 @@
 package com.skillio.pages;
 
 import com.skillio.utils.WaitFor;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import static com.skillio.base.Keyword.driver;
+import static com.skillio.base.Keyword.*;
 
 public class LoginPage {
 
@@ -24,7 +22,7 @@ public class LoginPage {
 
 
     public LoginPage(){
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     public void enterUserName(String userName){

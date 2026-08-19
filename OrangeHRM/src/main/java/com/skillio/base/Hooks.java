@@ -1,4 +1,4 @@
-package com.skillio.stepDefinitions;
+package com.skillio.base;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
