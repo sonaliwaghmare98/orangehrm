@@ -7,8 +7,12 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(features = "src/test/resources/Features",
         glue = "com.skillio",
-        tags = "not @Smoke", dryRun=false)
+        tags = "not @Smoke", dryRun=false,
+        plugin = {
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+        })
 public class Runner extends AbstractTestNGCucumberTests {
+
 
     @DataProvider(parallel = true)
     @Override

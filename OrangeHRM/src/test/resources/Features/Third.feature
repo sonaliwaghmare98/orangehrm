@@ -16,7 +16,7 @@ Feature: This is Third Feature File
       | Mango  |
     Then print the entire list
 
-  Scenario: Passing list as a parameter
+  Scenario: Passing list of list as a parameter
     Given I have following fruits with quantity:
       | Apple  | 6  |
       | Banana | 12 |

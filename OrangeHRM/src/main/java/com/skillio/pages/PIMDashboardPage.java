@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static com.skillio.base.Keyword.driver;
+import static com.skillio.base.Keyword.*;
 
 public class PIMDashboardPage {
 
@@ -34,7 +34,7 @@ public class PIMDashboardPage {
     WebElement isRequired;
 
     public PIMDashboardPage(){
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     public void clickPIMMenu(){

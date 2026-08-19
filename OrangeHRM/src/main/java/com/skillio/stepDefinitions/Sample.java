@@ -11,7 +11,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
@@ -79,7 +78,9 @@ public class Sample {
     public void printFruitList() {
         Set<String> keys = fruits.keySet();
         for (String key : keys) {
-            System.out.println(fruits.get(key));
+            System.out.printf("%-10s", key);
+            System.out.printf("%-10s", fruits.get(key));
+            System.out.println();
         }
     }
 
@@ -115,13 +116,12 @@ public class Sample {
 
     @Given("I have a {int}")
     public void acceptFromExcel(int rowNo) throws IOException {
-        String basePath = System.getProperty("user.dir");
+        String basePath = System.getProperty("user.dir");   //current working directory
         String filePath = "/src/test/resources/DataFiles/fruits.xlsx";
         FileInputStream fis = new FileInputStream(basePath + filePath);
-        Workbook book= new XSSFWorkbook(fis);
-        Sheet sheet=book.getSheetAt(0);
-        Row row=sheet.getRow(rowNo);
-        fruitName=row.getCell(1).getStringCellValue();
-
+        Workbook book = new XSSFWorkbook(fis);
+        Sheet sheet = book.getSheetAt(0);
+        Row row = sheet.getRow(rowNo);
+        fruitName = row.getCell(1).getStringCellValue();
     }
 }

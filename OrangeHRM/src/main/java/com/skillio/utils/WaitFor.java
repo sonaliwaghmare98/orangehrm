@@ -5,16 +5,16 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import static com.skillio.base.Keyword.driver;
+
 
 import java.time.Duration;
-
+import static com.skillio.base.Keyword.*;
 
 public abstract class WaitFor {
     static WebDriverWait wait;
 
     static{
-         wait=new WebDriverWait(driver, Duration.ofSeconds(60));
+         wait=new WebDriverWait(getDriver(), Duration.ofSeconds(60));
          wait.pollingEvery(Duration.ofMillis(500));
          wait.ignoring(NoSuchElementException.class);
     }
